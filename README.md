@@ -33,7 +33,7 @@ To reproduce the results of the paper, download the embeddings and produce dicti
 - [Word2Vec](https://code.google.com/archive/p/word2vec/)
 
 ### 3. Loading challenges
-We approximate WALES with a set of challenges.
+We evaluate WALES with a set of challenges.
 To load the human benchmark dataset use
 ```
 challenges = utils.load_challenges()
@@ -41,7 +41,7 @@ challenges = utils.load_challenges()
 `challenges` has to be a list of word tuples, that occur in `word2idx`.
 
 ### 4. WALES
-Simply instanciate the WALES class and run the `.evaluate` method.
+Simply instantiate the WALES class and run the `.evaluate` method.
 ```
 metric = wales.WALES(graph, word2idx, idx2word, emb_dict, gamma=1.0)
 score = metric.evaluate(challenges, verbose=True)
@@ -49,7 +49,7 @@ print(score)
 ```
 In this example, the embedding got a WALES score of 0.51.
 ```
->> 0.5072183094475405
+>>> 0.5072183094475405
 ```
 
 
