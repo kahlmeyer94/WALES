@@ -20,9 +20,10 @@ graph, idx2word, word2idx = utils.load_graph()
 
 ### 2. Loading an embedding
 ```
-emb_dict = utils.load_embedding('glove_50.p')
+emb_dict = utils.load_embedding('glove_50_reduced.p')
 ```
 `emb_dict` has to be a dictionary (key=word, value=vector).
+For memory reasons, we provide only a reduced version of the pretrained GloVe (d=50) used in the paper.
 
 ### 3. Loading challenges
 We approximate WALES with a set of challenges.
@@ -39,9 +40,9 @@ metric = wales.WALES(graph, word2idx, idx2word, emb_dict, gamma=1.0)
 score = metric.evaluate(challenges, verbose=True)
 print(score)
 ```
-In this example, the embedding got a WALES score of 0.54.
+In this example, the embedding got a WALES score of 0.51.
 ```
->> 0.5437351135473592
+>> 0.5072183094475405
 ```
 
 
