@@ -20,12 +20,12 @@ graph, idx2word, word2idx = utils.load_graph()
 
 ### 2. Loading an embedding
 ```
-emb_dict = utils.load_embedding('glove_50_reduced.p')
+emb_dict = utils.load_embedding('glove_50.p')
 ```
 `emb_dict` has to be a dictionary (key=word, value=vector).
 
-Note that for memory reasons, we provide only a reduced version of the pretrained GloVe (d=50) used in the paper.
-To reproduce the results of the paper, download the embeddings and produce dictionaries for the nodes in the graph.
+Note that for memory reasons, we provide only the pretrained GloVe (d=50) embedding used in the paper.
+To reproduce all the results of the paper, download the embeddings and produce dictionaries for the nodes in the graph.
 
 - [ELMo](https://allennlp.org/elmo)
 - [fasttext](https://fasttext.cc/docs/en/english-vectors.html)
@@ -49,7 +49,7 @@ print(score)
 ```
 In this example, the embedding got a WALES score of 0.51.
 ```
->>> 0.5072183094475405
+>>> 0.5437351135473592
 ```
 
 
