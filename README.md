@@ -23,7 +23,14 @@ graph, idx2word, word2idx = utils.load_graph()
 emb_dict = utils.load_embedding('glove_50_reduced.p')
 ```
 `emb_dict` has to be a dictionary (key=word, value=vector).
-For memory reasons, we provide only a reduced version of the pretrained GloVe (d=50) used in the paper.
+
+Note that for memory reasons, we provide only a reduced version of the pretrained GloVe (d=50) used in the paper.
+To reproduce the results of the paper, download the embeddings and produce dictionaries for the nodes in the graph.
+
+- [ELMo](https://allennlp.org/elmo)
+- [fasttext](https://fasttext.cc/docs/en/english-vectors.html)
+- [GloVe](https://nlp.stanford.edu/projects/glove/)
+- [Word2Vec](https://code.google.com/archive/p/word2vec/)
 
 ### 3. Loading challenges
 We approximate WALES with a set of challenges.
