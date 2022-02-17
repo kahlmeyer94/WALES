@@ -47,7 +47,7 @@ metric = wales.WALES(graph, word2idx, idx2word, emb_dict, gamma=1.0)
 score = metric.evaluate(challenges, verbose=True)
 print(score)
 ```
-In this example, the embedding got a WALES score of 0.51.
+In this example, the embedding got a WALES score of 0.54.
 ```
 >>> 0.5437351135473592
 ```
