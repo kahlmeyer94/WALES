@@ -7,7 +7,7 @@ import utils
 
 class WALES():
 
-    def __init__(self, wiki_graph, word2idx, idx2word, emb_dict, gamma=1.0, debug=False, **params):
+    def __init__(self, wiki_graph, word2idx, idx2word, emb_dict, gamma=1.0, **params):
         '''
         @Params:
             wiki_graph...   Networkx directed graph
@@ -23,12 +23,13 @@ class WALES():
         self.gamma = gamma
         self.internal_graph = nx.DiGraph()
 
+        '''
         self.idx2emb = {}
         for i in self.wiki_graph.nodes():
             w = self.idx2word[i]
-
             parts = utils.process_title(w)
             vecs = []
+            
             for p in parts:
                 if p in emb_dict:
                     vecs.append(emb_dict[p])
@@ -36,6 +37,8 @@ class WALES():
                     vecs.append(np.zeros(self.d))
             vecs = np.stack(vecs)
             self.idx2emb[i] = np.mean(vecs, axis=0)
+        '''
+        self.idx2emb = {i : emb_dict[idx2word[i]] for i in idx2word}
             
     def route(self, start, target, max_it=100):
         '''
